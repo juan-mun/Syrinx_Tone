@@ -6,9 +6,6 @@ from scipy.signal import lfilter
 import streamlit as st
 from huggingface_hub import snapshot_download
 
-# Forzar uso de CPU
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
 # === EMOTION MODIFIER FUNCTION ===
 def modify_audio_for_emotion(audio, sr, emotion):
     audio = audio.astype(np.float32)
@@ -70,7 +67,7 @@ def generate_emotional_audio(text, emotion):
         "--speaker_wav", speaker_wav,
         "--language_idx", "es",
         "--out_path", base_output_path,
-        "--use_cuda", "false"
+        "--use_cuda", "true"
     ]
 
     try:
