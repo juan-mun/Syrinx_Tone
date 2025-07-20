@@ -1,7 +1,10 @@
 streamlit
 transformers==4.35.2
-TTS
-torchaudio
 torch
-accelerate==0.30.1
+torchaudio
+soundfile
+scipy
+TTS
 huggingface_hub
+scipy
+pyyaml
